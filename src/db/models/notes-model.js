@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const notesSchema = new Schema({
   courseName: String,
   score: Number,
-  createdAt: { type: Date, default: Date.Now },
+  createdAt: { type: Date, default: Date.now },
 });
 
 notesSchema.set("toJSON", {
