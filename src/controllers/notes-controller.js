@@ -11,7 +11,7 @@ const findNote = async (request, response, next) => {
     const notes = await Find({ courseName });
 
     if (notes) {
-      response.status(201).json({
+      response.status(200).json({
         success: true,
         message: "notes listed",
         data: notes,
