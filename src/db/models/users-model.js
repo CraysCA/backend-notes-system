@@ -17,5 +17,4 @@ usersSchema.set("toJSON", {
   },
 });
 
-const User = model("User", usersSchema);
-module.exports = User;
+module.exports = model("User", usersSchema);

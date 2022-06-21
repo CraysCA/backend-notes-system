@@ -14,6 +14,4 @@ notesSchema.set("toJSON", {
   },
 });
 
-const Note = model("Note", notesSchema);
-
-module.exports = Note;
+module.exports = model("Note", notesSchema);

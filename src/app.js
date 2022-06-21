@@ -9,6 +9,8 @@ app.listen(serverSettings.port, () => {
   console.info(`server up on port: ${serverSettings.port}`);
 });
 
-app.use(routes);
+//parser body to json
 app.use(express.json());
+
+app.use(routes);
 app.use(cors);
