@@ -42,7 +42,11 @@ const update = async ({ courseName, data }) => {
     { $set: { score: data.score, courseName: data.courseName } }
   )
     .then((item) => {
-      return item;
+      return Note.find({
+        courseName: data.courseName ? data.courseName : courseName,
+      }).then((item) => {
+        return item;
+      });
     })
     .catch((error) => {
       console.error(error);
