@@ -1,2 +1,3 @@
 const notesRepository = require("./notes-repository");
-module.exports = { notesRepository };
+const usersRepository = require("./users-repository");
+module.exports = { notesRepository, usersRepository };

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const routes = require("./routes");
+const { errorHandler } = require("./middlewares");
 const { serverSettings } = require("./config/config.js");
 require("./db/connection.js");
 
@@ -13,4 +14,6 @@ app.listen(serverSettings.port, () => {
 app.use(express.json());
 
 app.use(routes);
+app.use(errorHandler);
+
 app.use(cors);
