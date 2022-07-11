@@ -6,7 +6,6 @@ const routes = require("./routes");
 const { errorHandler } = require("./middlewares");
 const { serverSettings } = require("./config/config.js");
 require("./db/connection.js");
-require("./middlewares/authorization");
 
 app.listen(serverSettings.port, () => {
   console.info(`server up on port: ${serverSettings.port}`);
