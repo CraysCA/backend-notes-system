@@ -1,7 +1,12 @@
 const router = require("express").Router();
+const passport = require("passport");
 const { usersController } = require("../controllers");
 
-router.get("/", usersController.findUser);
+router.get(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  usersController.findUser
+);
 
 router.post("/", usersController.createUser);
 

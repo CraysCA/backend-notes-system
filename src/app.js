@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+require("./middlewares/auth");
 const routes = require("./routes");
 const { errorHandler } = require("./middlewares");
 const { serverSettings } = require("./config/config.js");

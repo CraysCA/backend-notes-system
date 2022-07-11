@@ -6,6 +6,7 @@ const environment = {
   db: {
     host: process.env.MONGODB_HOST,
   },
+  jwtSecretKey: process.env.JWT_SECRET_KEY,
 };
 
 module.exports = environment;

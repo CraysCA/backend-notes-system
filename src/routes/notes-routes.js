@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const { authorization } = require("../middlewares/");
 const { notesController } = require("../controllers/index.js");
 
-router.get("/", notesController.findNote);
+router.get("/", authorization, notesController.findNote);
 
 router.post("/", notesController.createNote);
 

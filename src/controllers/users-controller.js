@@ -30,7 +30,6 @@ const findUser = async (request, response, next) => {
 const createUser = async (request, response, next) => {
   const { body: data } = request;
   try {
-    sdsdsa;
     const users = await Create({ data });
 
     response.status(201).json({
