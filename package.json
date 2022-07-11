@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@hapi/boom": "^10.0.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -7,7 +8,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.0",
     "passport": "^0.6.0",
-    "passport-jwt": "^4.0.0"
+    "passport-http": "^0.3.0"
   },
   "name": "sistema-de-notas",
   "version": "1.0.0",

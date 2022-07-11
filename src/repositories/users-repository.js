@@ -72,4 +72,14 @@ const destroy = async ({ id }) => {
     });
 };
 
-module.exports = { find, create, destroy, update };
+const findByEmail = async ({ email }) => {
+  return User.findOne({ email })
+    .then((item) => {
+      return item;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+module.exports = { find, create, destroy, update, findByEmail };

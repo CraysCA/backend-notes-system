@@ -1,7 +1,7 @@
-const { Login } = require("../application/use-cases/users");
+const { Login } = require("../application/use-cases/auth");
 
 const login = async (request, response, next) => {
-  const { body: userData } = request;
+  const { user: userData } = request;
   try {
     const token = await Login({ userData });
 
