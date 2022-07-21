@@ -1,13 +1,29 @@
 const router = require("express").Router();
-const { authorization } = require("../middlewares/");
+const { authorization, validationHandler } = require("../middlewares/");
+const { notesSchema } = require("../middlewares/schemas");
 const { notesController } = require("../controllers/index.js");
 
-router.get("/", authorization, notesController.findNote);
+router.get("/", validationHandler(notesSchema.onGet), notesController.findNote);
 
-router.post("/", notesController.createNote);
+router.post(
+  "/",
+  authorization,
+  validationHandler(notesSchema.create),
+  notesController.createNote
+);
 
-router.delete("/:courseName", notesController.destroyNote);
+router.put(
+  "/:courseName",
+  authorization,
+  validationHandler(notesSchema.update),
+  notesController.updateNote
+);
 
-router.put("/:courseName", notesController.updateNote);
+router.delete(
+  "/:courseName",
+  authorization,
+  validationHandler(notesSchema.onDelete),
+  notesController.destroyNote
+);
 
 module.exports = router;
