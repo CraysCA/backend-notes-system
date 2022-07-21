@@ -1,17 +1,34 @@
 const router = require("express").Router();
-const passport = require("passport");
+const { authorization, validationHandler } = require("../middlewares");
+const { usersSchema } = require("../middlewares/schemas");
 const { usersController } = require("../controllers");
 
 router.get(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  authorization,
+  validationHandler(usersSchema.onGet),
   usersController.findUser
 );
 
-router.post("/", usersController.createUser);
+router.post(
+  "/",
+  authorization,
+  validationHandler(usersSchema.create),
+  usersController.createUser
+);
 
-router.put("/:id", usersController.updateUser);
+router.put(
+  "/:id",
+  authorization,
+  validationHandler(usersSchema.update),
+  usersController.updateUser
+);
 
-router.delete("/:id", usersController.destroyUser);
+router.delete(
+  "/:id",
+  authorization,
+  validationHandler(usersSchema.onDelete),
+  usersController.destroyUser
+);
 
 module.exports = router;
