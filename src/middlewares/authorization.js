@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { jwtSecretKey } = require("../config/config");
 
 module.exports = async (request, response, next) => {
-  const { authToken } = request.body;
+  const { auth_token: authToken } = request.cookies;
   try {
     if (!authToken)
       return response
