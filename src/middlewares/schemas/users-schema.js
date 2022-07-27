@@ -3,10 +3,12 @@ const Joi = require("@hapi/joi");
 const create = {
   body: Joi.object().keys({
     name: Joi.string().required(),
-    lastName: Joi.string().required(),
+    lastname: Joi.string().required(),
+    img: Joi.string().optional(),
     email: Joi.string().required(),
     password: Joi.string().required(),
     isAdmin: Joi.boolean().required(),
+    course: Joi.string().required(),
   }),
 };
 
@@ -16,10 +18,12 @@ const update = {
   }),
   body: Joi.object().keys({
     name: Joi.string().optional(),
-    lastName: Joi.string().optional(),
+    lastname: Joi.string().optional(),
+    img: Joi.string().optional(),
     email: Joi.string().optional(),
     password: Joi.string().optional(),
     isAdmin: Joi.boolean().optional(),
+    course: Joi.string().optional(),
   }),
 };
 
