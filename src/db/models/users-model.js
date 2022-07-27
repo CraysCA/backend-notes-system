@@ -2,11 +2,13 @@ const { Schema, model } = require("mongoose");
 
 const usersSchema = new Schema({
   name: String,
-  lastName: String,
+  lastname: String,
+  img: String,
   email: String,
   password: String,
   isAdmin: Boolean,
   createdAt: { type: Date, default: Date.now },
+  course: String,
 });
 
 usersSchema.set("toJSON", {

@@ -23,10 +23,12 @@ const find = async ({ id }) => {
 const create = async ({ data }) => {
   const newUser = new User({
     name: data.name,
-    lastName: data.lastName,
+    lastname: data.lastname,
+    img: data.img,
     email: data.email,
     password: data.password,
     isAdmin: data.isAdmin,
+    course: data.course,
   });
 
   return newUser
@@ -45,10 +47,12 @@ const update = async ({ id, data }) => {
     {
       $set: {
         name: data.name,
-        lastName: data.lastName,
+        lastname: data.lastname,
+        img: data.img,
         email: data.email,
         password: data.password,
         isAdmin: data.isAdmin,
+        course: data.course,
       },
     }
   )
