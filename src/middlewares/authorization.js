@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
-const { jwtSecretKey } = require("../config/config");
+const { jwtSecretKey, jwtIsActive } = require("../config/config");
 
 module.exports = async (request, response, next) => {
+  console.log(jwtIsActive);
+  if (!jwtIsActive) return next();
   const { auth_token: authToken } = request.cookies;
   try {
     if (!authToken)

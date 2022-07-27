@@ -12,6 +12,11 @@ app.listen(serverSettings.port, () => {
   console.info(`server up on port: ${serverSettings.port}`);
 });
 
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 //parser body to json
 app.use(express.json());
 app.use(cookieParser());
