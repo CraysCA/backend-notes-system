@@ -7,6 +7,7 @@ const usersSchema = new Schema({
   email: String,
   password: String,
   isAdmin: Boolean,
+  dni: String,
   createdAt: { type: Date, default: Date.now },
   course: String,
 });

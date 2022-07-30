@@ -1,6 +1,4 @@
 const { Strategy, ExtractJwt } = require("passport-jwt");
-const bcrypt = require("bcrypt");
-const boom = require("@hapi/boom");
 const { jwtSecretKey } = require("../../config/config");
 
 const options = {

@@ -29,6 +29,7 @@ const create = async ({ data }) => {
     password: data.password,
     isAdmin: data.isAdmin,
     course: data.course,
+    dni: data.dni,
   });
 
   return newUser
@@ -53,6 +54,7 @@ const update = async ({ id, data }) => {
         password: data.password,
         isAdmin: data.isAdmin,
         course: data.course,
+        dni: data.dni,
       },
     }
   )
