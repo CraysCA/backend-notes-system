@@ -6,9 +6,10 @@ const create = {
     lastname: Joi.string().required(),
     img: Joi.string().optional(),
     email: Joi.string().required(),
-    password: Joi.string().required(),
-    isAdmin: Joi.boolean().required(),
+    password: Joi.string().optional(),
+    isAdmin: Joi.boolean().optional(),
     course: Joi.string().required(),
+    dni: Joi.string().required(),
   }),
 };
 
@@ -24,6 +25,8 @@ const update = {
     password: Joi.string().optional(),
     isAdmin: Joi.boolean().optional(),
     course: Joi.string().optional(),
+    course: Joi.string().optional(),
+    dni: Joi.string().optional(),
   }),
 };
 
