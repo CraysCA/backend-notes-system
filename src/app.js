@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
+
+const cors = require("./cors");
 require("./middlewares/auth");
 const routes = require("./routes");
 const cookieParser = require("cookie-parser");
@@ -12,11 +13,8 @@ app.listen(serverSettings.port, () => {
   console.info(`server up on port: ${serverSettings.port}`);
 });
 
-app.use(
-  cors({
-    origin: "http://localhost:8080",
-  })
-);
+app.use(cors);
+
 //parser body to json
 app.use(express.json());
 app.use(cookieParser());
